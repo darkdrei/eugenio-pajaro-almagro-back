@@ -50,7 +50,7 @@ function CoreConsulta(t,n,m){
 		con_m++;
 	}
 
-}
+}las opera
 
 CoreConsulta.prototype.validarT = function (t) {
 	if (t<1 || t > 50){
