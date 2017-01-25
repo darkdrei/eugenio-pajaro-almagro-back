@@ -1,12 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Cube Summation</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/matriz.js"></script>
+  <script type="text/javascript" src="js/coreconsulta.js"></script>
+  <script type="text/javascript" src="js/controlador_acciones.js"></script>
 </head>
 <body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Prueva Técnica</a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Cube Summation</h1>
+      <div class="row center">
+        <a href="#modal1" class="waves-effect waves-light btn modal-trigger accion_modal">Iniciar</a>
+      </div>
+    </div>
+  </div>
+  <div class="container header center">
+    <div class="section">
 
-</body>
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <!--h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2-->
+            <h5 class="center">Tablero de consulta</h5>
+            <textarea class="light materialize-textarea elem" id="tablero" name="contenedor" rows="10" cols="40" placeholder="Escriba su consulta...."></textarea>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <!--h2 class="center light-blue-text"><i class="material-icons">group</i></h2-->
+            <h5 class="center">Resultado</h5>
+            <textarea class="light materialize-textarea elem" id="resultado" name="contenedor" rows="10" cols="40" placeholder="Resultado...." di></textarea>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <!--h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2-->
+            <h5 class="center">Variables</h5>
+            <ul>
+              <li>
+                <spant>T</spant>
+                <input type="text" id="t" class="elem">
+              </li>
+              <li>
+                <spant>N</spant>
+                <input type="text" id="n" class="elem">
+              </li>
+              <li>
+                <spant>M</spant>
+                <input type="text" id="m" class="elem">
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="footer-copyright">
+      <div class="container">
+      Realizado por Eugenio Pajaro A
+      </div>
+    </div>
+  </footer>
+
+<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="mt" type="text" class="validate clear">
+          <label for="t">T</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="mn" type="text" class="validate clear">
+          <label for="n">N</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="mm" type="text" class="validate clear">
+          <label for="m">M</label>
+        </div>
+      </div>
+    </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action waves-effect waves-green btn-flat add">Aceptar</a>
+      <a href="#!" class=" modal-action waves-effect waves-green btn-flat cancel">Cancelar</a>
+    </div>
+  </div>
+  <!--  Scripts-->
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript">
+  $('#modal').leanModal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200, // Transition out duration
+      ready: function() { alert('Ready'); }, // Callback for Modal open
+      complete: function() { alert('Closed'); } // Callback for Modal close
+    }
+  );
+  </script>
+  </body>
 </html>
