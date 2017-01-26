@@ -120,9 +120,8 @@ Matriz.prototype.validarSetXYZ=function(x,y,z,w){
 }
 
 Matriz.prototype.validarN = function(n){
-	if (t<1 || t > 100){
+	if (n<1 || n > 100){
 		return [false,"El valor para N debe encontrase entre 1 y 100."];
 	}
 	return [true];
 }
-

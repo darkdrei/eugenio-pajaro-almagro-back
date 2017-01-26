@@ -18,7 +18,6 @@ function CoreConsulta(t,n,m){
 	}
 
 	this.setM =function(m2){
-		console.log("Cambiando m : "+m+"  "+m2);
 		m=m2;
 	}
 
@@ -50,7 +49,7 @@ function CoreConsulta(t,n,m){
 		con_m++;
 	}
 
-}las opera
+}
 
 CoreConsulta.prototype.validarT = function (t) {
 	if (t<1 || t > 50){
@@ -60,7 +59,7 @@ CoreConsulta.prototype.validarT = function (t) {
 }
 
 CoreConsulta.prototype.validarM = function (m) {
-	if (t<1 || t > 1000){
+	if (m<1 || m > 1000){
 		return [false,"El valor para M debe encontrase entre 1 y 1000."];
 	}
 	return [true];
@@ -70,7 +69,6 @@ CoreConsulta.prototype.lineUpdate = function (c){
 	if(this.validarUpdate(c)){
 		var cadena = new String(c);
 		var v = cadena.split(" ");//Contiene los valores.
-		console.log(v);
 		var x=parseInt(v[1]),
 			y=parseInt(v[2]),
 			z=parseInt(v[3]),
@@ -109,12 +107,10 @@ CoreConsulta.prototype.lineQuery = function (c){
 }
 
 CoreConsulta.prototype.validarUpdate = function (c){
-	//var expreg = /^(UPDATE|update)\s((-?\d){1,3})([,\.][0-9]*)?\s((-?\d){1,3})([\.][0-9]*)?\s((-?\d){1,3})([\.][0-9]*)?\s((-?\d){1,10})([\.][0-9]*)?$/;
 	return this.validoraExprecion(c,/^(UPDATE|update)\s((-?\d){1,3})([,\.][0-9]*)?\s((-?\d){1,3})([\.][0-9]*)?\s((-?\d){1,3})([\.][0-9]*)?\s((-?\d){1,10})([\.][0-9]*)?$/);
 }
 
 CoreConsulta.prototype.validarQuery = function (c){
-	//var query = /^(query|QUERY)\s\d{1,3}\s\d{1,3}\s\d{1,3}\s\d{1,3}\s\d{1,3}\s\d{1,3}$/;
 	return this.validoraExprecion(c,/^(query|QUERY)\s\d{1,3}\s\d{1,3}\s\d{1,3}\s\d{1,3}\s\d{1,3}\s\d{1,3}$/);
 }
 

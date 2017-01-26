@@ -19,7 +19,7 @@ $(document).on('ready',function(){
 				var res_con
 				if(r.search("UPDATE") != -1){
 					res_con = core.lineUpdate(r);
-					if(res_con[0]){						
+					if(res_con[0]){
 						disminuirScore();
 					}else{
 						$(this).val($(this).val()+"\n"+res_con[1]);
@@ -36,7 +36,6 @@ $(document).on('ready',function(){
 			}else if((new String(resp[resp.length-2])).search("Digite N y M, separado por espacion") != -1){
 				if(/^\d+\s\d+$/.test(r)){
 					var res = r.split(" ");
-					console.log(res);
 					var tem_r =core.getMatriz().validarN(res[0]);
 					if(tem_r[0]){
 						tem_r = core.validarM(res[1]);
@@ -52,7 +51,7 @@ $(document).on('ready',function(){
 						}
 					}else{
 						$('#tablero').val($('#tablero').val()+"\n"+tem_r[1]+"\nDigite N y M, separado por espacion : ");
-					}					
+					}
 				}else{
 					$('#tablero').val($('#tablero').val()+"\nDigite dos valores numericos."+"\nDigite N y M, separado por espacion : ");
 				}
@@ -100,7 +99,7 @@ function opcionesModal(){
 		borrarPopup();
 		$('#modal1').closeModal();
 	});
-    $('.add').on('click',function(){    	
+    $('.add').on('click',function(){
     	var t=$('#mt'),
     		n=$('#mn'),
     		m=$('#mm');
@@ -113,7 +112,6 @@ function opcionesModal(){
     					if(r[0]){
     						r = core.validarM(m.val());
 	    					if(r[0]){
-	    						console.log(parseInt(t.val())+"  "+parseInt(n.val())+"   "+parseInt(m.val()));
 	    						core = new CoreConsulta(parseInt(t.val()),parseInt(n.val()),parseInt(m.val()));
 	    						core.getMatriz().llenarBloques();
 	    						limpiarCampos();
